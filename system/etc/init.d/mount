@@ -1,0 +1,12 @@
+#!/system/bin/sh
+
+#mounting mod by dr.root
+
+for k in $(mount | grep relatime | cut -d " " -f3)
+do
+sync
+busybox mount -o remount,noatime,nodiratime $k
+done;
+busybox mount -o remount,rw,noatime,nodiratime,errors=continue,barr ier=0,nobh,delalloc,noauto_da_alloc,discard, data=writeback /system
+busybox mount -o remount,rw,nosuid,nodev,noatime,nodiratime,errors= continue,barrier=0,nobh,delalloc,noauto_da_alloc,d iscard, data=writeback /data
+busybox mount -o remount,rw,nosuid,nodev,noatime,nodiratime,errors= continue,barrier=0,nobh,delalloc,noauto_da_alloc,d iscard, data=writeback /cache

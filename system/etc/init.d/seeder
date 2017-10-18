@@ -1,0 +1,6 @@
+#!/system/bin/sh
+
+#performance mod by dr.root
+
+busybox sysctl -e -w kernel.random.read_wakeup_threshold=1366;
+busybox sysctl -e -w kernel.random.write_wakeup_threshold=2048;

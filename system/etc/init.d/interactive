@@ -1,0 +1,10 @@
+#!/system/bin/sh
+
+#performance mod by dr.root
+
+echo 95 > /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
+echo 95 1950000:99 > /sys/devices/system/cpu/cpufreq/interactive/target_loads
+echo 40000 > /sys/devices/system/cpu/cpufreq/interactive/timer_rate
+echo 10000 > /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
+echo 10000 > /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
+echo 100000 > /sys/devices/system/cpu/cpufreq/interactive/timer_slack
